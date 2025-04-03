@@ -1,11 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { View, Text, Image, StyleSheet } from "react-native";
+import GeradorSenha from "./geradorSenha";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Text style={styles.titulo}>GERADOR DE SENHA</Text>
+
+      <Image source={require("./assets/lock.png")} style={styles.imagem} />
+
+      <GeradorSenha />
     </View>
   );
 }
@@ -13,8 +17,19 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+  titulo: {
+    fontSize: 24,
+    fontWeight: "bold",
+    color: "#007AFF",
+    marginBottom: 20,
+  },
+  imagem: {
+    width: 150,
+    height: 150,
+    marginBottom: 20,
   },
 });
